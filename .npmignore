@@ -1,0 +1,14 @@
+tracking/index.html
+tracking/index-dev.js
+tracking/dist/
+dist/
+
+*.tgz
+.codeclimate.yml
+.eslintrc.js
+aws-profile.json
+
+testSDK.js
+webpack.dev.js
+webpack.prod.js
+

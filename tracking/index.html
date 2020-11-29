@@ -1,0 +1,113 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>visenze tracking demo</title>
+    <meta name="description" content="A page to test the different widgets">
+    <meta name="viewport" content="width=device-width">
+
+    <style type="text/css" media="screen, print">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        div#result {
+            border: 1px solid;
+            padding: 18px;
+            min-height: 200px;
+            margin: 22px 0;
+            overflow: auto;
+        }
+    </style>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <!-- endbuild -->
+
+</head>
+
+<body onload="dissectAiInit(this)">
+    <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+    <div class="container">
+        <h1>Tracking Test</h1>
+
+        <h4>Session</h4>
+        <div class="buttonList">
+            <button onclick="testClick(this)">Create new Session </button>
+            <button onclick="testClick(this)">Current Session</button>
+            <button onclick="testClick(this)">Referring Site</button>
+            <button onclick="testClick(this)">Session Identifier</button>
+            <button onclick="testClick(this)">Visitor Identifier</button>   
+        </div>
+
+        <h4>Activity</h4>
+        <div class="buttonList">
+            <button onclick="testClick(this)">Page Visit Identifier	</button>
+            <button onclick="testClick(this)">Page Url</button>
+            <button onclick="testClick(this)">Page Action Type</button>
+            <button onclick="testClick(this)">Time & Date Requested</button>
+            <button onclick="testClick(this)">Time & Date Received</button>   
+        </div>
+
+        <h4>Device</h4>
+        <div class="buttonList">
+            <button onclick="testClick(this)">IP Address</button>
+            <button onclick="testClick(this)">Country/Region</button>
+            <button onclick="testClick(this)">Viewport & Screen Size</button>
+            <button onclick="testClick(this)">Browser Information</button>
+            <button onclick="testClick(this)">Device Type</button>   
+            <button onclick="testClick(this)">Operating System Information</button>   
+        </div>
+
+        <div id="result" class="result"></div>
+        
+    </div>
+
+
+    <script>
+        var tracker;
+        function dissectAiInit(window) {
+            console.log("window", window)
+            const result = document.getElementById('result');
+            result.innerHTML = 'Window Loaded'
+        }
+
+
+        function testClick(node) {
+            console.log("Test click", node)
+            const result = document.getElementById('result');
+            result.innerHTML = node.innerHTML
+        }
+
+      
+    </script>
+
+    <!-- Snowplow starts plowing -->
+<script type="text/javascript">
+    ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+    p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+    };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+    n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","{{URL to sp.js}}","snowplow"));
+    
+    snowplow('newTracker', 'sp', '{{collector_url_here}}', {
+        appId: 'my-app-id',
+        contexts: {
+            webPage: true
+        }
+    });
+    
+    snowplow('enableActivityTracking', 30, 10);
+    snowplow('trackPageView');
+    
+    </script>
+    <!-- Snowplow stops plowing -->
+
+</body>
+
+</html>
