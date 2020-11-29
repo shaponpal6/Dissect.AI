@@ -87,6 +87,7 @@ function Dissect(){
     }
 }
 
-const dt = new Dissect();
-dt.init('pageview')
-dt.print();
+window.dissect = new Dissect();
+// const dt = new Dissect();
+// dt.init('pageview')
+// dt.print();
