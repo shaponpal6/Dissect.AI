@@ -77,7 +77,7 @@
  */
 function DissectFunc(){
     this.tracker = "";
-	this.sessionId  = sessionStorage.getItem('dissectSessionId');
+	  this.sessionId  = sessionStorage.getItem('dissectSessionId');
     setCookie('dissectPageViewId', cuid());
     if(!this.sessionId){
         const uid = cuid();
