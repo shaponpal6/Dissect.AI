@@ -73,7 +73,7 @@
     <script>
         var tracker;
         function dissectAiInit(window) {
-            console.log("window", window)
+            // console.log("window", window)
             const result = document.getElementById('result');
             result.innerHTML = 'Window Loaded'
         }
@@ -103,7 +103,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js', 'da');
+        })(window, document, 'script', 'https://github.com/shaponpal6/Dissect.AI/blob/main/tracking/dist/tracking.1.0.2.js', 'da');
         da('create', 'LICENCE-KEY');
         da('send', 'print');
         </script>
