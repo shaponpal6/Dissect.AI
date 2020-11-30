@@ -93,7 +93,7 @@
     <!-- <script defer src="script.js"></script> -->
     
     
-<script defer src="dissect.min.js"></script>
+<!-- <script defer src="dissect.min.js"></script> -->
 
 <!-- 
 <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js"></script>
@@ -111,8 +111,7 @@
 <!-- <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js"></script> -->
 <!-- <script defer src="../tracking/dist/tracking.1.0.2.js"></script> -->
    <script type="text/javascript">
-        (function(w, d, s, g, o, a, m){
-            
+        (function(w, d, s, g, o, a, m){ 
             w['DissectAnalyticsObject'] = o;
             w[o] = w[o] || function () {
                 (w[o].q = w[o].q || []).push(arguments)
@@ -122,11 +121,12 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'http://localhost:8080/tracking/test.js', 'da');
-        da('create', 'UA-XXXXX-Y');
+        })(window, document, 'script', 'http://localhost:8080/tracking/dist/tracking.1.0.2.js', 'da');
+        da('create', 'LICENCE-KEY');
         da('send', 'print');
         </script>
 
+<!-- https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js -->
 
 
     <!-- })(window, document, 'script', 'http://localhost:8080/tracking/test.js', 'dissect'); -->
