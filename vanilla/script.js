@@ -1,14 +1,12 @@
 
 
-
-
 /**
  * Define core Dissect Tracker object
  * 
  */
-function Dissect222(){
+function DissectFunc(){
     this.tracker = "";
-    this.sessionId  = sessionStorage.getItem('dissectSessionId');
+	  this.sessionId  = sessionStorage.getItem('dissectSessionId');
     setCookie('dissectPageViewId', cuid());
     if(!this.sessionId){
         const uid = cuid();
@@ -143,9 +141,51 @@ function Dissect222(){
     }
 }
 
-// window.dissect = new Dissect();
 
-// // window.dissect = new Dissect();
-// // const dt = new Dissect();
-// // window.dissect.init('pageview')
-// // window.dissect.print();
+ function DissectObj(asynchronousQueue, functionName) {
+//   console.log('object>>>>', asynchronousQueue, functionName)
+//   console.log('asynchronousQueue', asynchronousQueue)
+  const dt = new DissectFunc();
+//   console.log('dt', dt)
+//   window.dissect.init('pageview')
+//   window.dissect.print();
+  if(asynchronousQueue.length > 0){
+	asynchronousQueue.forEach(element => {
+		// console.log('element', element)
+		// if (obj_str in window)
+		if(element[0] === "create"){
+			dt.init('pageview');
+		}
+		if(element[0] === "send"){
+			dt.print();
+		}
+		
+	});
+  }
+
+}
+
+
+var queueName,
+  queue,
+  windowAlias = window;
+
+if (windowAlias.DissectAnalyticsObject && windowAlias.DissectAnalyticsObject.length > 0) {
+  queueName = windowAlias.DissectAnalyticsObject;
+  queue = windowAlias[queueName];
+  queue.q = new DissectObj(queue.q, queueName);
+} else {
+  windowAlias._snaq = windowAlias._snaq || [];
+  windowAlias._snaq = new Dissect(windowAlias._snaq, '_snaq');
+}
+
+// function dissect()
+// {
+//     Bar.apply(this, arguments);
+// }
+
+
+
+// console.log('winwow11', window)
+
+// return new dissect()
