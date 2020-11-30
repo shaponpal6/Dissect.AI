@@ -94,6 +94,9 @@
     
     
 <script defer src="dissect.min.js"></script>
+
+<!-- 
+<script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js"></script>
    <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
         if(window.dissect){
@@ -101,7 +104,33 @@
         window.dissect.print();
         }
     }, false);
+    </script> -->
+
+
+
+<!-- <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js"></script> -->
+<script defer src="../tracking/dist/tracking.1.0.2.js"></script>
+   <script type="text/javascript">
+        (function(w, d, s, g, o, a, m){
+            w['DissectAnalyticsObject'] = o;
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments)
+            }, w[o].l = 1 * new Date();
+            a = d.createElement(s),
+                m = d.getElementsByTagName(s)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'file', da);
+        da.init('pageview')
+        da.print();
     </script>
+   
+   
+   
+   <!-- <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",function(){window.dissect&&(window.dissect.init("pageview"),window.dissect.print())},!1);
+    </script> -->
 
    <script type="text/javascript">
         ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
