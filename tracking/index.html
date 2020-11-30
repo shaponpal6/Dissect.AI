@@ -89,11 +89,28 @@
     </script>
 
     <!-- Dissect Analytics -->
-    <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/tracking/dist/tracking.1.0.2.js"></script>
+    <!-- <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/tracking/dist/tracking.1.0.2.js"></script> -->
 
    <script type="text/javascript">
+
+(function(w, d, s, g, o, a, m){
+            w['DissectAnalyticsObject'] = o;
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments)
+            }, w[o].l = 1 * new Date();
+            a = d.createElement(s),
+                m = d.getElementsByTagName(s)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+            console.log(w)
+            console.log(a)
+            console.log(m)
+        })(window, document, 'script', 'http://localhost:8080/index_bundle.js', 'dissect');
+        console.log('dissect', dissect)
+        dissect('init','pageview','print');
 </script>
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
         ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
         p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
         };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
@@ -109,7 +126,7 @@
         snowplow('enableActivityTracking', 30, 10);
         snowplow('trackPageView');
     
-    </script>
+    </script> -->
     <!-- Dissect Analytics -->
 
 </body>

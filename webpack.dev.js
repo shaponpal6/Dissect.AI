@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const config = (directory) => {
     return {
         devtool: 'source-map',
-        entry: path.resolve(directory, 'index-dev.js'),
+        entry: path.resolve(directory, 'index.js'),
         output: {
             path: path.resolve(directory, 'dist'),
             filename: 'index_bundle.js',

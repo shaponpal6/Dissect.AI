@@ -109,9 +109,10 @@
 
 
 <!-- <script defer src="https://raw.githubusercontent.com/shaponpal6/Dissect.AI/main/vanilla/dissect.min.js"></script> -->
-<script defer src="../tracking/dist/tracking.1.0.2.js"></script>
+<!-- <script defer src="../tracking/dist/tracking.1.0.2.js"></script> -->
    <script type="text/javascript">
         (function(w, d, s, g, o, a, m){
+            
             w['DissectAnalyticsObject'] = o;
             w[o] = w[o] || function () {
                 (w[o].q = w[o].q || []).push(arguments)
@@ -121,10 +122,14 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'file', da);
-        da.init('pageview')
-        da.print();
-    </script>
+        })(window, document, 'script', 'http://localhost:8080/tracking/test.js', 'da');
+        da('create', 'UA-XXXXX-Y');
+        da('send', 'print');
+        </script>
+
+
+
+    <!-- })(window, document, 'script', 'http://localhost:8080/tracking/test.js', 'dissect'); -->
    
    
    
@@ -133,20 +138,20 @@
     </script> -->
 
    <script type="text/javascript">
-        ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
-        p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
-        };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
-        n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","{{URL to sp.js}}","snowplow"));
+        // ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+        // p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+        // };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+        // n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","{{URL to sp.js}}","snowplow"));
         
-        snowplow('newTracker', 'sp', '{{collector_url_here}}', {
-            appId: 'my-app-id',
-            contexts: {
-                webPage: true
-            }
-        });
+        // snowplow('newTracker', 'sp', '{{collector_url_here}}', {
+        //     appId: 'my-app-id',
+        //     contexts: {
+        //         webPage: true
+        //     }
+        // });
         
-        snowplow('enableActivityTracking', 30, 10);
-        snowplow('trackPageView');
+        // snowplow('enableActivityTracking', 30, 10);
+        // snowplow('trackPageView');
     
     </script>
     <!-- Dissect Analytics -->
